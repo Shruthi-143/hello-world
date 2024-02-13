@@ -1,0 +1,14 @@
+name: Generate LocationIdMappingInfo JSON
+
+on:
+  push:
+    branches:
+      - main  # Adjust this based on your branch name
+
+jobs:
+  run-script:
+    runs-on: self-hosted  # You can choose a different OS if needed
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
