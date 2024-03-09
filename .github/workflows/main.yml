@@ -17,7 +17,7 @@ jobs:
     - name: Cheching changes on repo
       run : |
             echo ${{ github.repository }}
-            if git diff --quiet HEAD^ HEAD; then
+            if git diff ${{ github.repository }}; then
             echo "No changes detected."
             else
             echo "Changes detected."
