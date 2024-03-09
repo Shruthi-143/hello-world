@@ -17,6 +17,7 @@ jobs:
     - name: Cheching changes on repo
       run : |
             echo ${{ github.repository }}
+            echo git diff --name-only ${{ github.event.before }} ${{ github.sha }};
             if git diff --name-only ${{ github.event.before }} ${{ github.sha }}; then
             echo "No changes detected."
             else
