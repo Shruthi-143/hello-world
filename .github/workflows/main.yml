@@ -16,6 +16,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Cheching changes on repo
       run : |
+            echo ${{ github.repository }}
             if git diff --quiet HEAD^ HEAD; then
             echo "No changes detected."
             else
