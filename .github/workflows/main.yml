@@ -18,8 +18,8 @@ jobs:
       run : |
             echo ${{ github.repository }}
             echo git diff --name-only ${{ github.event.before }} ${{ github.sha }};
-            if git diff --name-only ${{ github.event.before }} ${{ github.sha }}; then
-            echo "changes detected."
+            if git diff --quiet main...HEAD; then
+            echo "No changes detected."
             else
             echo "no Changes detected."
             fi
