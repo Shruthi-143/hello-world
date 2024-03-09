@@ -14,3 +14,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+    - name: Cheching changes on repo
+      run : |
+            if git diff --quiet HEAD^ HEAD; then
+            echo "No changes detected."
+            else
+            echo "Changes detected."
+            fi
